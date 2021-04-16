@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="TicketingSystem:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>TicketingSystem</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="TicketingSystem-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="TicketingSystem:war exploded" />
+    </root>
+  </artifact>
+</component>
