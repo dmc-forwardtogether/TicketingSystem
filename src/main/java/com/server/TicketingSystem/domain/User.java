@@ -4,9 +4,18 @@ import java.sql.Date;
 
 public class User {
     private int user_id;
-    private String user_name;
+    private String user_username;
     private String user_password;
     private Date user_birthday;
+    private String user_activeCode;
+
+    public String getUser_activeCode() {
+        return user_activeCode;
+    }
+
+    public void setUser_activeCode(String user_activeCode) {
+        this.user_activeCode = user_activeCode;
+    }
 
     public int getUser_id() {
         return user_id;
@@ -16,12 +25,12 @@ public class User {
         this.user_id = user_id;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUser_username() {
+        return user_username;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUser_username(String user_username) {
+        this.user_username = user_username;
     }
 
     public String getUser_password() {

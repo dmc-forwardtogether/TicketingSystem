@@ -1,24 +1,16 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh"> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8" lang="zh"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9" lang="zh"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js"> <!--<![endif]-->
-
+<%@ page contentType="text/html;charset=UTF-8"%>
+<html>
 <head>
+
     <%--style--%>
     <%@include file="style.jsp" %>
 
-    <title>向前票务</title>
+    <title>查询页</title>
 
 </head>
-
 <body>
 
-<!--header-->
+<!-- START #fh5co-header -->
 <%@include file="head.jsp" %>
 
 <div id="fh5co-hero">
@@ -38,11 +30,28 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-md-8 col-offset-2 animate-box fade-InUp animated">
+        <form action="#" method="post">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="departure" class="sr-only">出发地</label>
+                    <input type="text" name="departure" id="departure" placeholder="出发地" class="form-control input-lg">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
 <!--footer-->
 <%@include file="foot.jsp" %>
 
+
 <%--script--%>
 <%@include file="script.jsp" %>
+
 
 </body>
 </html>
