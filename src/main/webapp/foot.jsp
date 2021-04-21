@@ -32,7 +32,7 @@
       </div>
       <div class="col-md-12 footer-box">
         <div class="fh5co-copyright">
-          <p>&copy; 2015 Free Slant. All Rights Reserved. <br>Designed by <a href="http://freehtml5.co" target="_blank">FREEHTML5.co</a> Images by: <a href="http://unsplash.com">Unsplash</a> and <a href="http://plmd.me" target="_blank">plmd.me</a></p>
+          <p>&copy; 2021 XQ Qian All Rights Reserved. <br>浙ICP备2021012046号</p>
         </div>
       </div>
 
