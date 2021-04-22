@@ -4,30 +4,25 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-6 footer-box">
-        <h3 class="fh5co-footer-heading">About us</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima delectus dolorem fugit totam, commodi ad.</p>
-        <p><a href="#" class="btn btn-outline btn-sm">I'm a button</a></p>
+        <h3 class="fh5co-footer-heading">关于我</h3>
+        <p>向前票务是一家专注于个人航空订票的票务网站,立志于成为世界一流航空票务网站,加油,奥力给!</p>
 
       </div>
       <div class="col-md-4 col-sm-6 footer-box">
-        <h3 class="fh5co-footer-heading">Links</h3>
+        <h3 class="fh5co-footer-heading">其他票务网站</h3>
         <ul class="fh5co-footer-links">
-          <li><a href="#">Terms &amp; Conditions</a></li>
-          <li><a href="#">Our Careers</a></li>
-          <li><a href="#">Support &amp; FAQ's</a></li>
-          <li><a href="#">Sign up</a></li>
-          <li><a href="#">Log in</a></li>
+          <li><a href="https://flights.ctrip.com/international/search/domestic">携程</a></li>
+          <li><a href="https://flight.qunar.com/">去哪儿</a></li>
+          <li><a href="https://www.mafengwo.cn/flight/#/index">马蜂窝</a></li>
         </ul>
       </div>
       <div class="col-md-4 col-sm-12 footer-box">
-        <h3 class="fh5co-footer-heading">Get in touch</h3>
+        <h3 class="fh5co-footer-heading">联系我</h3>
         <ul class="fh5co-social-icons">
 
-          <li><a href="#"><i class="ti-google"></i></a></li>
-          <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-          <li><a href="#"><i class="ti-facebook"></i></a></li>
-          <li><a href="#"><i class="ti-instagram"></i></a></li>
-          <li><a href="#"><i class="ti-dribbble"></i></a></li>
+          <li><a href="https://mail.qq.com"><i class="ti-email"></i></a></li>
+          <li><a href="https://github.com/dmc-forwardtogether"><i class="ti-github"></i></a></li>
+          <li><a href="https://www.baidu.com"><i class="ti-search"></i></a></li>
         </ul>
       </div>
       <div class="col-md-12 footer-box">

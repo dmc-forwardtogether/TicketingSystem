@@ -1,8 +1,9 @@
 package com.server.TicketingSystem.filter;
 
 import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -21,11 +22,12 @@ public class EncodingFilter implements Filter {
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
         // 处理响应乱码
         String url=httpServletRequest.getRequestURI();
-        System.out.println("url:" +url);
+//        System.out.println("url:" +url);
         if(url.indexOf(".css")>0||url.indexOf(".js")>0||url.indexOf(".png")>0) {
             chain.doFilter(request, httpServletResponse);
             return;
         }
+        httpServletRequest.setCharacterEncoding("UTF-8");
         httpServletResponse.setContentType("text/html;text/html; charset=UTF-8");
         chain.doFilter(httpServletRequest, httpServletResponse);
     }

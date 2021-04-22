@@ -1,21 +1,39 @@
 package com.server.TicketingSystem.domain;
 
+import java.sql.Date;
 import java.sql.Time;
 
 public class Tickets {
-    private int ticket_id;
+    private String ticket_id;
     private String air_company;
+    private String departure;
+    private String destination;
+    private Date ticket_date;
     private int ticket_price;
     private Time ticket_startTime;
     private Time ticket_arrivalTime;
-    private boolean air_isTransit;
-    private String air_transitField;
 
-    public int getTicket_id() {
+    public String getDeparture() {
+        return departure;
+    }
+
+    public void setDeparture(String departure) {
+        this.departure = departure;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    public String getTicket_id() {
         return ticket_id;
     }
 
-    public void setTicket_id(int ticket_id) {
+    public void setTicket_id(String ticket_id) {
         this.ticket_id = ticket_id;
     }
 
@@ -51,19 +69,11 @@ public class Tickets {
         this.ticket_arrivalTime = ticket_arrivalTime;
     }
 
-    public boolean isAir_isTransit() {
-        return air_isTransit;
+    public Date getTicket_date() {
+        return ticket_date;
     }
 
-    public void setAir_isTransit(boolean air_isTransit) {
-        this.air_isTransit = air_isTransit;
-    }
-
-    public String getAir_transitField() {
-        return air_transitField;
-    }
-
-    public void setAir_transitField(String air_transitField) {
-        this.air_transitField = air_transitField;
+    public void setTicket_date(Date ticket_date) {
+        this.ticket_date = ticket_date;
     }
 }

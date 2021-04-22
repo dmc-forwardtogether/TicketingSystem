@@ -19,5 +19,9 @@
 <script src="js/fastclick.js"></script>
 <!-- Waypoints -->
 <script src="js/jquery.waypoints.min.js"></script>
+<!--moment.js-->
+<script src="js/moment.js"></script>
+<!--datePicker-->
+<script src="https://cdn.bootcdn.net/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
 <!-- Main JS -->
 <script src="js/main.js"></script>

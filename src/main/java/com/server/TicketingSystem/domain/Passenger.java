@@ -10,6 +10,7 @@ public class Passenger {
     private String passenger_idCard;
     private String passenger_organization;
     private Date passenger_time;
+    private String air_id;
 
     public int getPassenger_id() {
         return passenger_id;
@@ -65,5 +66,13 @@ public class Passenger {
 
     public void setPassenger_time(Date passenger_time) {
         this.passenger_time = passenger_time;
+    }
+
+    public String getAir_id() {
+        return air_id;
+    }
+
+    public void setAir_id(String air_id) {
+        this.air_id = air_id;
     }
 }
