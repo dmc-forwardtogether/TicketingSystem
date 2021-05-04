@@ -35,13 +35,23 @@
             <div class="fh5co-hero-wrap">
                 <div class="fh5co-hero-intro">
                     <h1 class="to-animate hero-animate-1">总有你想要的低价</h1>
-                    <h2 class="to-animate hero-animate-2">Lovely Made by <a href="#" target="_blank">FREEHTML5.co</a>
-                    </h2>
-                    <p class="to-animate hero-animate-3"><a href="#" class="btn btn-outline btn-lg">立即订票</a></p>
+                    <p class="to-animate hero-animate-3">
+                        <a href="${pageContext.request.contextPath}/query.jsp" class="btn btn-outline btn-lg">
+                            立即订票
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<div id="fh5co-main">
+    <div class="fh5co-spacer fh5co-spacer-lg"></div>
+    <div class="row">
+        <h1 class="col-md-4 col-md-offset-4">低价机票推荐(功能暂未上线)</h1>
+    </div>
+    <div class="fh5co-spacer fh5co-spacer-lg"></div>
 </div>
 
 <!--footer-->

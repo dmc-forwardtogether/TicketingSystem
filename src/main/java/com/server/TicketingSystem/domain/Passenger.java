@@ -6,11 +6,20 @@ public class Passenger {
     private int passenger_id;
     private String passenger_name;
     private String passenger_gender;
-    private String passenger_destination;
     private String passenger_idCard;
-    private String passenger_organization;
-    private Date passenger_time;
     private String air_id;
+    private String departure;
+    private String destination;
+    private Date ticket_date;
+    private String tickets_id;
+
+    public String getTickets_id() {
+        return tickets_id;
+    }
+
+    public void setTickets_id(String tickets_id) {
+        this.tickets_id = tickets_id;
+    }
 
     public int getPassenger_id() {
         return passenger_id;
@@ -36,14 +45,6 @@ public class Passenger {
         this.passenger_gender = passenger_gender;
     }
 
-    public String getPassenger_destination() {
-        return passenger_destination;
-    }
-
-    public void setPassenger_destination(String passenger_destination) {
-        this.passenger_destination = passenger_destination;
-    }
-
     public String getPassenger_idCard() {
         return passenger_idCard;
     }
@@ -52,27 +53,35 @@ public class Passenger {
         this.passenger_idCard = passenger_idCard;
     }
 
-    public String getPassenger_organization() {
-        return passenger_organization;
-    }
-
-    public void setPassenger_organization(String passenger_organization) {
-        this.passenger_organization = passenger_organization;
-    }
-
-    public Date getPassenger_time() {
-        return passenger_time;
-    }
-
-    public void setPassenger_time(Date passenger_time) {
-        this.passenger_time = passenger_time;
-    }
-
     public String getAir_id() {
         return air_id;
     }
 
     public void setAir_id(String air_id) {
         this.air_id = air_id;
+    }
+
+    public String getDeparture() {
+        return departure;
+    }
+
+    public void setDeparture(String departure) {
+        this.departure = departure;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    public Date getTicket_date() {
+        return ticket_date;
+    }
+
+    public void setTicket_date(Date ticket_date) {
+        this.ticket_date = ticket_date;
     }
 }

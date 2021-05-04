@@ -18,4 +18,24 @@ public class TicketsService {
             throw new QueryException("暂无航班信息");
         }
     }
+
+    public Tickets result(String ticket_id,Date ticket_date) throws Exception{
+        TicketsDao dao = new TicketsDao();
+        return dao.findTicketsByTicket_idAndTicket_date(ticket_id,ticket_date);
+    }
+
+    public void add(Tickets tickets) throws Exception{
+        TicketsDao dao = new TicketsDao();
+        dao.addTickets(tickets);
+    }
+
+    public void delete(String id) throws Exception{
+        TicketsDao dao = new TicketsDao();
+        dao.delete(id);
+    }
+
+    public void update(Tickets tickets) throws Exception{
+        TicketsDao dao = new TicketsDao();
+        dao.update(tickets);
+    }
 }

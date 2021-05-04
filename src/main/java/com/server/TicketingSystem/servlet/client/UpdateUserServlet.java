@@ -5,6 +5,7 @@ import com.server.TicketingSystem.exception.RegisterException;
 import com.server.TicketingSystem.service.UserService;
 import org.apache.commons.beanutils.BeanUtils;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,22 +18,26 @@ import java.sql.Date;
  * @author qxq
  */
 
-@WebServlet(name = "RegisterServlet", value = "/RegisterServlet")
-public class RegisterServlet extends HttpServlet {
+@WebServlet(name = "UpdateUserServlet", value = "/UpdateUserServlet")
+public class UpdateUserServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        doPost(request,response);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //JavaBean
+        User user_old = (User) request.getSession().getAttribute("user");
         User user = new User();
+
+        int id = user_old.getUser_id();
 
         String password = request.getParameter("password");
         String re_password = request.getParameter("re_password");
 
+        user.setUser_id(id);
         user.setUser_username(request.getParameter("username"));
         user.setUser_password(password);
         user.setUser_birthday(Date.valueOf(request.getParameter("birthday")));
@@ -52,7 +57,7 @@ public class RegisterServlet extends HttpServlet {
         UserService service = new UserService();
         try {
             if (imgCode.equals(word) && password.equals(re_password)) {
-                service.register(user);
+                service.update(user);
             } else if (!imgCode.equals(word)){
                 throw new RegisterException("验证码错误");
             } else {
@@ -62,7 +67,7 @@ public class RegisterServlet extends HttpServlet {
             e.printStackTrace();
             response.getWriter().write(e.getMessage());
         }
-        //注册成功,跳转到主页
+        //修改信息成功,跳转到主页
         response.sendRedirect(request.getContextPath()+"/index.jsp");
     }
 }

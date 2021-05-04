@@ -20,6 +20,17 @@ public class UserService {
         }
     }
 
+    //更新信息
+    public void update(User user) throws RegisterException {
+        try {
+            userDao.updateUser(user);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RegisterException("更新信息失败,请检查格式");
+        }
+
+    }
+
     /**
      * @author qxq
      * 登录操作
@@ -34,5 +45,6 @@ public class UserService {
             throw new LoginException("用户名或者密码错误");
         }
     }
+
 
 }

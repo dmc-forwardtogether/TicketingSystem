@@ -11,32 +11,27 @@ public class UserDao {
 
     //添加用户
     public void addUser(User user) throws SQLException {
-        String sql = "insert into qxq_ticket.user(user_username,user_PASSWORD,user_birthday," +
-                "user_activeCode,user_gender,user_introduce,user_registerTime," +
-                "user_role,user_state,user_telephone) values(?,?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into qxq_ticket.user(user_username, user_PASSWORD, " +
+                "user_birthday,user_introduce, user_gender, user_telephone)" +
+                " values(?,?,?,?,?,?)";
         QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
         int row = runner.update(sql,user.getUser_username(),user.getUser_password(),
-                user.getUser_birthday(),user.getUser_activeCode());
+                user.getUser_birthday(),user.getUser_introduce(),user.getUser_gender(),
+                user.getUser_telephone());
         if (row == 0){
             throw new RuntimeException();
         }
     }
 
-    //根据激活码查找用户
-    public User findUserByActiveCode(String activeCode)
-            throws SQLException{
-        String sql = "select * from qxq_ticket.user where user_activeCode=?";
+    //更新用户
+    public void updateUser(User user) throws SQLException {
+        String sql = "UPDATE qxq_ticket.user SET user_username=?, user_PASSWORD=?, " +
+                "user_birthday=?,user_introduce=?, user_gender=?, user_telephone=?" +
+                "WHERE user_id=?";
         QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
-        return runner.query(sql, new BeanHandler<>(User.class),activeCode);
-    }
-
-    //激活用户
-    public void activeUser(String activeCode) throws SQLException{
-        //1.准备sql
-        String sql = "update qxq_ticket.user set user_state=? where user_activeCode=?";
-        QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
-        //2.把用户的状态设置为激活:1
-        int row = runner.update(sql,1,activeCode);
+        int row = runner.update(sql,user.getUser_username(),user.getUser_password(),
+                user.getUser_birthday(),user.getUser_introduce(),user.getUser_gender(),
+                user.getUser_telephone(),user.getUser_id());
         if (row == 0){
             throw new RuntimeException();
         }
@@ -49,4 +44,6 @@ public class UserDao {
         QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
         return runner.query(sql, new BeanHandler<>(User.class),username,password);
     }
+
+
 }

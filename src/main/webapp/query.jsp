@@ -58,7 +58,7 @@
             <div id="fh5co-tab-feature" class="fh5co-tab">
                 <ul class="resp-tabs-list hor_1">
                     <li><i class="fh5co-tab-menu-icon ti-ticket"></i>国内/国际机票</li>
-                    <li><a href="${pageContext.request.contextPath}/order.jsp"><i class="fh5co-tab-menu-icon ti-back-left"></i>退票改签</a></li>
+                    <li><a href="${pageContext.request.contextPath}/add_passenger.jsp"><i class="fh5co-tab-menu-icon ti-back-left"></i>退票改签</a></li>
                     <li><i class="fh5co-tab-menu-icon ti-more"></i>更多服务</li>
                 </ul>
                 <div class="resp-tabs-container hor_1">

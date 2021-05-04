@@ -1,6 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="p" uri="https://www.serverTS.com/tag" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <!--[if lt IE 7]>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh"> <![endif]-->
@@ -22,11 +20,6 @@
 
 <!--header-->
 <%@include file="head.jsp" %>
-
-<div class="col-md-12 animate-box">
-    <h2 class="fh5co-uppercase-heading-sm text-center">注册</h2>
-    <div class="fh5co-spacer fh5co-spacer-sm"></div>
-</div>
 
 <div id="fh5co-hero">
     <a href="#fh5co-main" class="smoothscroll fh5co-arrow to-animate hero-animate-2"><i class="ti-angle-down"></i></a>
@@ -51,16 +44,16 @@
 
                 <c:forEach items="${tickets}" var="ticket">
                     <div class="panel panel-default ">
-                        <div class="panel-heading" role="tab" id="headingOne" data-toggle="collapse"
-                             data-parent="#accordion" data-target="#collapseOne" aria-expanded="false"
+                        <div class="panel-heading" role="tab" id="heading${ticket.ticket_id}" data-toggle="collapse"
+                             data-parent="#accordion" data-target="#collapse${ticket.ticket_id}" aria-expanded="false"
                              aria-controls="collapseOne">
                             <h4 class="panel-title">
                                 <a class="accordion-toggle">${ticket.air_company}&nbsp;&nbsp;
                                         ${ticket.ticket_id}&nbsp;&nbsp;${ticket.ticket_price}元</a>
                             </h4>
                         </div>
-                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
-                             aria-labelledby="headingOne">
+                        <div id="collapse${ticket.ticket_id}" class="panel-collapse collapse in" role="tabpanel"
+                             aria-labelledby="heading${ticket.ticket_id}">
                             <div class="panel-body">
                                     <h2 class="col-md-12">${ticket.ticket_startTime}--${ticket.ticket_arrivalTime}</h2>
                                     <h2 class="col-md-4">${ticket.departure}--${ticket.destination}</h2>
@@ -68,7 +61,9 @@
                                     <p class="col-md-4">${ticket.air_company}&nbsp;&nbsp;
                                             ${ticket.ticket_id}
                                     </p>
-                                    <a href="#"><button class="col-md-2 col-md-offset-6 btn-lg" type="button">订票</button></a>
+                                    <a href="${pageContext.request.contextPath}/ResultServlet?ticket_id=${ticket.ticket_id}&ticket_date=${ticket.ticket_date}">
+                                        <button class="col-md-2 col-md-offset-6 btn-lg" type="button">订票</button>
+                                    </a>
                             </div>
                         </div>
                     </div>

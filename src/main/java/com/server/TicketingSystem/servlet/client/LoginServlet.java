@@ -30,26 +30,23 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         //2.调用service来判断用户名和密码是否正确。
         UserService service = new UserService();
-        try {
-            User user = service.login(username, password);
-            //3.说明用户名和密码正确
-            if (user.getUser_state() == 1) {//如果用户的状态为激活,才允许登录
+            User user = null;
+            try {
+                user = service.login(username, password);
+            } catch (LoginException loginException) {
+                loginException.printStackTrace();
+            }
                 request.getSession().setAttribute("user",user);
                 //3.1 用户为超级管理员,跳转到后台的页面
-                String role = user.getUser_role();
-                if (role.equals("超级用户")){
-                    response.sendRedirect(request.getContextPath()+"/admin/login/home.jsp");
-                }else {
-                    response.sendRedirect(request.getContextPath()+"/admin/myAccount.jsp");
-                }
-
-            }
-        } catch (LoginException e) {
-            e.printStackTrace();
-            request.setAttribute("register_message", e.getMessage());
-            request.getRequestDispatcher("/login.jsp").forward(request, response);
+        String role;
+        if (user != null) {
+            role = user.getUser_role();
+            if (role.equals("超级用户")){
+                        response.sendRedirect(request.getContextPath()+"/admin/index.jsp");
+                    }else {
+                        response.sendRedirect(request.getContextPath()+"/profile.jsp");
+                    }
         }
-
 
     }
 }

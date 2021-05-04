@@ -11,8 +11,8 @@ import java.io.IOException;
  * @author qxq
  */
 
-@WebServlet(name = "DeletePassengerServlet", value = "/DeletePassengerServlet")
-public class DeletePassengerServlet extends HttpServlet {
+@WebServlet(name = "DeleteOrderServlet", value = "/DeleteOrderServlet")
+public class DeleteOrderServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

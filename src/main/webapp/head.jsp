@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="p" uri="https://www.serverTS.com/tag" %>
+<%@ page import="com.server.TicketingSystem.domain.User" %>
 <header id="fh5co-header-section" role="header" class="">
     <div class="container">
 
@@ -13,20 +15,37 @@
 
             <ul class="sf-menu" id="fh5co-primary-menu">
                 <li class="active">
-                    <a href="index.jsp">首页</a>
+                    <a href="${pageContext.request.contextPath}/index.jsp">首页</a>
                 </li>
+
+                    <%
+                        User user = (User) request.getSession().getAttribute("user");
+                        if(null == user){
+                    %>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/login.jsp">登录</a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/register.jsp">注册</a>
+                    </li>
+                    <%
+                    }else{
+                    %>
                 <li>
-                    <a href="#" class="fh5co-sub-ddown">登录</a>
+                    <a href="#" class="fh5co-sub-ddown">${user.user_username}</a>
                     <ul class="fh5co-sub-menu">
                         <li><a href="${pageContext.request.contextPath}/profile.jsp">账户</a></li>
                         <li><a href="${pageContext.request.contextPath}/order.jsp">订单</a></li>
                         <li><a href="${pageContext.request.contextPath}/logout">退出登录</a></li>
                     </ul>
                 </li>
+                    <%
+                        }
+                    %>
+
                 <li class="fh5co-special"><a href="${pageContext.request.contextPath}/query.jsp">立即订票</a></li>
             </ul>
         </nav>
 
     </div>
 </header>
-</html>
